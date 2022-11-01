@@ -1,83 +1,233 @@
 /* Responsive Layout */
 /* Small Divises */
 @media only screen and (max-width: 600px) {
+  .overall-container { padding: 0; }
   .home-layout {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    }
-    
-    .header { grid-area: 1 / 1 / 2 / 5; }
-    .add-posts { grid-area: 2 / 1 / 3 / 5; }
-    .pictures { grid-area: 3 / 1 / 4 / 5; }
-    .view-posts { grid-area: 4 / 1 / 5 / 5; }
+  }
+
+  .body {
+    grid-area: 2 / 1 / 9 / 7;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+  .display {
+    width: 100%;
+  }
+  .posting {
+    width: 100%;
+  }
+  .add-posts {
+    height: 123px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 0 10px;
+    box-shadow: 5px 5px 5px #cccccc;
+  }
+  .pictures {
+    height: 400px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px #cccccc;
+  }
+  .view-posts {
+    min-height: 230px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px #cccccc;
+  }
 }
 
 @media only screen and (min-width: 600px) {
+  .overall-container { padding: 0; }
   .home-layout {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    }
-    
-    .header { grid-area: 1 / 1 / 2 / 5; }
-    .add-posts { grid-area: 2 / 1 / 3 / 5; }
-    .pictures { grid-area: 3 / 1 / 4 / 5; }
-    .view-posts { grid-area: 4 / 1 / 5 / 5; }
+  }
+
+  .body {
+    grid-area: 2 / 1 / 9 / 7;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+  .display {
+    width: 100%;
+  }
+  .posting {
+    width: 100%;
+  }
+  .add-posts {
+    height: 123px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 0 10px;
+    box-shadow: 5px 5px 5px #cccccc;
+  }
+  .pictures {
+    height: 600px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px #cccccc;
+  }
+  .view-posts {
+    min-height: 230px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px #cccccc;
+  }
 }
 /* Small Divises */
 
 /* Medium divises */
 @media only screen and (min-width: 768px) {
+  .overall-container { padding: 0; }
   .home-layout {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    }
-    
-    .header { grid-area: 1 / 1 / 2 / 5; }
-    .add-posts { grid-area: 2 / 1 / 3 / 5; }
-    .pictures { grid-area: 3 / 1 / 4 / 5; }
-    .view-posts { grid-area: 4 / 1 / 5 / 5; }
+  }
+
+  .body {
+    grid-area: 2 / 1 / 9 / 7;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 50px;
+  }
+  .display {
+    width: 100%;
+  }
+  .posting {
+    width: 100%;
+  }
+  .add-posts {
+    height: 123px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 0 10px;
+    box-shadow: 5px 5px 5px #cccccc;
+  }
+  .pictures {
+    height: 800px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px #cccccc;
+  }
+  .view-posts {
+    min-height: 230px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px #cccccc;
+  }
 }
 
 @media only screen and (min-width: 992px) {
+  .overall-container { padding: 0; }
   .home-layout {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    }
-    
-    .header { grid-area: 1 / 1 / 2 / 5; }
-    .add-posts { grid-area: 2 / 3 / 3 / 5; }
-    .pictures { grid-area: 2 / 1 / 5 / 3; }
-    .view-posts  { grid-area: 3 / 3 / 8 / 5; }
+  }
+
+  .body {
+    grid-area: 2 / 1 / 9 / 7;
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+  }
+  .display {
+    width: 50%;
+  }
+  .posting {
+    width: 50%;
+  }
+  .add-posts {
+    height: 123px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px #cccccc;
+  }
+  .pictures {
+    height: 600px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px #cccccc;
+  }
+  .view-posts {
+    min-height: 230px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px #cccccc;
+  }
 }
 
 /* Medium divises */
 
 /* Large divises */
 @media only screen and (min-width: 1200px) {
+  .overall-container { padding: 0 300px; }
   .home-layout {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    }
-    
-    .header { grid-area: 1 / 1 / 2 / 5; }
-    .add-posts { grid-area: 2 / 3 / 3 / 5; }
-    .pictures { grid-area: 2 / 1 / 5 / 3; }
-    .view-posts  { grid-area: 3 / 3 / 8 / 5; }
+  }
+
+  .body {
+    grid-area: 2 / 1 / 9 / 7;
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+  }
+  .display {
+    width: 50%;
+  }
+  .posting {
+    width: 50%;
+  }
+  .add-posts {
+    height: 123px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px #cccccc;
+  }
+  .pictures {
+    height: 700px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px #cccccc;
+  }
+  .view-posts {
+    min-height: 230px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px #cccccc;
+  }
 }
 
 /* Large divises */
