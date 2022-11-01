@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Header } from '../../components/header';
+import { CreatePost } from '../../components/create-post';
 
 import './styles.css';
 
@@ -13,7 +14,7 @@ export const Home = () => {
           <div className='pictures'>pictures</div>
         </div>
         <div className='posting'>
-          <div className='add-posts'>posting</div>
+          <CreatePost />
           <div className='view-posts'>view</div>
         </div>
       </div>

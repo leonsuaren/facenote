@@ -1,11 +1,13 @@
 import './App.css';
-import { Home } from '../src/views/home'
+import { PostContextProvider } from './context/post-context';
+
+import { Home } from '../src/views/home';
 
 function App() {
   return (
-    <div>
+    <PostContextProvider>
       <Home />
-    </div>
+    </PostContextProvider>
   );
 }
 
