@@ -8,7 +8,7 @@ import './styles.css';
 export const Home = () => {
   return (
     <div className='home-layout'>
-      <Header name='Leon Suarez'/>
+      <Header/>
       <div className='body overall-container'>
         <div className='display'>
           <div className='pictures'>pictures</div>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { PostContext } from '../../context/post-context';
 import { FcGallery } from "react-icons/fc";
 
@@ -6,6 +6,8 @@ import './styles.css';
 
 export const CreatePost = () => {
   const postContext = useContext(PostContext);
+  const [postText, setPostText] = useState('');
+  const userName = postContext.userName
 
   return (
     <div className='add-posts'>
@@ -20,12 +22,12 @@ export const CreatePost = () => {
                 <h1 className="modal-title fs-5" id="postModalLabel">Crear Publicación</h1>
                 <button type="button" className="btn-close close-button" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div className="modal-body">
-                ...
+              <div className="modal-body modal-posting-area">
+                <div>{ userName }</div>
+                <textarea className='post-text-area' placeholder='¿Que estas pensando?' value={postText} onChange={(e) => setPostText(e.currentTarget.value)}/>
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary">Save changes</button>
+                <button type="button" className={postText.length <= 0 ? "create-post-button-disabled" : "create-post-button btn btn-primary"} disabled={postText.length <= 0 ? true : false}>Publicar</button>
               </div>
             </div>
           </div>
