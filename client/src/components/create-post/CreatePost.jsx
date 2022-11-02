@@ -4,10 +4,28 @@ import { FcGallery } from "react-icons/fc";
 
 import './styles.css';
 
+import { DateTime } from "luxon";
+
 export const CreatePost = () => {
-  const postContext = useContext(PostContext);
+  const dt = DateTime.now();
+
   const [postText, setPostText] = useState('');
-  const userName = postContext.userName
+  const [post, setPost] = useState({});
+
+  const postContext = useContext(PostContext);
+  const userName = postContext.userName;
+  const newPost = postContext.newPost;
+
+  const handleOnClick = () => {
+    setPost({
+      type: 'text',
+      userName: userName,
+      date: dt.toLocaleString(DateTime.DATETIME_FULL),
+      post: postText,
+      likes: 0
+    })
+    postContext.setNewPost([...newPost, post]);
+  }
 
   return (
     <div className='add-posts'>
@@ -20,14 +38,16 @@ export const CreatePost = () => {
             <div className="modal-content">
               <div className="modal-header">
                 <h1 className="modal-title fs-5" id="postModalLabel">Crear Publicación</h1>
-                <button type="button" className="btn-close close-button" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" className="btn-close close-button" data-bs-dismiss="modal" aria-label="Close" onClick={() => setPostText('')}></button>
               </div>
               <div className="modal-body modal-posting-area">
                 <div>{ userName }</div>
                 <textarea className='post-text-area' placeholder='¿Que estas pensando?' value={postText} onChange={(e) => setPostText(e.currentTarget.value)}/>
               </div>
               <div className="modal-footer">
-                <button type="button" className={postText.length <= 0 ? "create-post-button-disabled" : "create-post-button btn btn-primary"} disabled={postText.length <= 0 ? true : false}>Publicar</button>
+                <button type="button" className={postText.length <= 0 ? "create-post-button-disabled" : "create-post-button btn btn-primary"} disabled={postText.length <= 0 ? true : false}
+                  onClick={handleOnClick}
+                >Publicar</button>
               </div>
             </div>
           </div>

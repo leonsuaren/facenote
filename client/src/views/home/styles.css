@@ -22,22 +22,8 @@
   .posting {
     width: 100%;
   }
-  .add-posts {
-    height: 123px;
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 0 10px;
-    box-shadow: 5px 5px 5px #cccccc;
-  }
   .pictures {
     height: 400px;
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 5px 5px 5px #cccccc;
-  }
-  .view-posts {
-    min-height: 230px;
     background: rgb(255, 255, 255);
     border-radius: 10px;
     margin: 10px;
@@ -67,22 +53,8 @@
   .posting {
     width: 100%;
   }
-  .add-posts {
-    height: 123px;
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 0 10px;
-    box-shadow: 5px 5px 5px #cccccc;
-  }
   .pictures {
     height: 600px;
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 5px 5px 5px #cccccc;
-  }
-  .view-posts {
-    min-height: 230px;
     background: rgb(255, 255, 255);
     border-radius: 10px;
     margin: 10px;
@@ -114,22 +86,8 @@
   .posting {
     width: 100%;
   }
-  .add-posts {
-    height: 123px;
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 0 10px;
-    box-shadow: 5px 5px 5px #cccccc;
-  }
   .pictures {
     height: 800px;
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 5px 5px 5px #cccccc;
-  }
-  .view-posts {
-    min-height: 230px;
     background: rgb(255, 255, 255);
     border-radius: 10px;
     margin: 10px;
@@ -159,22 +117,8 @@
   .posting {
     width: 50%;
   }
-  .add-posts {
-    height: 123px;
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 5px 5px 5px #cccccc;
-  }
   .pictures {
     height: 600px;
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 5px 5px 5px #cccccc;
-  }
-  .view-posts {
-    min-height: 230px;
     background: rgb(255, 255, 255);
     border-radius: 10px;
     margin: 10px;
@@ -207,22 +151,8 @@
   .posting {
     width: 50%;
   }
-  .add-posts {
-    height: 123px;
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 5px 5px 5px #cccccc;
-  }
   .pictures {
     height: 700px;
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 5px 5px 5px #cccccc;
-  }
-  .view-posts {
-    min-height: 230px;
     background: rgb(255, 255, 255);
     border-radius: 10px;
     margin: 10px;
