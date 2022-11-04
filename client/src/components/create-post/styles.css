@@ -68,9 +68,37 @@
   width: 100%;
   height: 300px;
 }
+.modal-media-area {
+  display: grid;
+  grid-template-rows: 10% 30% 30% 30%;
+  width: 100%;
+  height: 500px;
+}
+.upload-image-input {
+  display: none;
+}
+.upload-image-input-label {
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #e0e8f3;
+  color: #6a6c6d;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.media-input-icon {
+  font-size: 4rem;
+}
 .post-text-area {
   border: none;
   margin: 10px 0px;
+}
+.media-text-area {
+  border: none;
+  margin: 10px 0px;
+  max-height: 100px;
 }
 /* Small Divises */
 @media only screen and (max-width: 600px) {

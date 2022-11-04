@@ -33,9 +33,7 @@ export const Post = () => {
                 <input className='comment-input' placeholder='Escribe un comentario...' />
                 <hr />
                 <div className='commnets-area'>
-                  <input className='comment-input comments-area-input' />
-                  <input className='comment-input' />
-                  <input className='comment-input' />
+                  <div className='comment-input comments-area-input' />
                 </div>
               </div>
             </div>
