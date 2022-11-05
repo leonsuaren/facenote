@@ -22,13 +22,6 @@
   .posting {
     width: 100%;
   }
-  .pictures {
-    height: 400px;
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 5px 5px 5px #cccccc;
-  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -52,13 +45,6 @@
   }
   .posting {
     width: 100%;
-  }
-  .pictures {
-    height: 600px;
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 5px 5px 5px #cccccc;
   }
 }
 /* Small Divises */
@@ -86,13 +72,6 @@
   .posting {
     width: 100%;
   }
-  .pictures {
-    height: 800px;
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 5px 5px 5px #cccccc;
-  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -116,13 +95,6 @@
   }
   .posting {
     width: 50%;
-  }
-  .pictures {
-    height: 600px;
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 5px 5px 5px #cccccc;
   }
 }
 
@@ -150,13 +122,6 @@
   }
   .posting {
     width: 50%;
-  }
-  .pictures {
-    height: 700px;
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 5px 5px 5px #cccccc;
   }
 }
 

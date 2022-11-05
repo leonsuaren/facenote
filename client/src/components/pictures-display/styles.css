@@ -1,0 +1,59 @@
+/* Responsive Layout */
+/* Small Divises */
+
+.pictures {
+  display: grid;
+  grid-template-rows: 10% 90%;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #cccccc;
+}
+
+.pictures-title {
+  font-weight: bold;
+}
+
+.pictures-display {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+  align-items: center;
+  justify-items: center;
+}
+@media only screen and (max-width: 600px) {
+  .pictures {
+    height: 400px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .pictures {
+    height: 600px;
+  }
+}
+/* Small Divises */
+
+/* Medium divises */
+@media only screen and (min-width: 768px) {
+  .pictures {
+    height: 800px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .pictures {
+    height: 600px;
+  }
+}
+
+/* Medium divises */
+
+/* Large divises */
+@media only screen and (min-width: 1200px) {
+  .pictures {
+    height: 700px;
+  }
+}
