@@ -20,7 +20,7 @@ export const Post = () => {
               </div>
               <div>
                 {
-                  post.type === 'text' ? <div className='post-text-area'>{post.post}</div> : <div>image</div>
+                  post.type === 'text' ? <div className='post-text-area'>{post.post}</div> : <div><img className='post-image-container' src={post.image} /></div>
                 }
               </div>
               <div className='likes-comments'>

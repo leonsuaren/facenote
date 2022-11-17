@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useCallback } from 'react';
 import { PostContext } from '../../context/post-context';
 import { FcGallery, FcMultipleCameras } from "react-icons/fc";
 
@@ -7,25 +7,57 @@ import './styles.css';
 import { DateTime } from "luxon";
 
 export const CreatePost = () => {
+  const postContext = useContext(PostContext);
   const dt = DateTime.now();
 
   const [postText, setPostText] = useState('');
   const [post, setPost] = useState({});
 
-  const postContext = useContext(PostContext);
   const userName = postContext.userName;
   const newPost = postContext.newPost;
 
-  const handleOnClick = () => {
+  const handleOnPost = () => {
     setPost({
       type: 'text',
       userName: userName,
       date: dt.toLocaleString(DateTime.DATETIME_FULL),
       post: postText,
       likes: 0
-    })
+    });
     postContext.setNewPost([...newPost, post]);
-  }
+  };
+
+  const handleOnFileSelected = useCallback( async(e) => {
+    const imageFile = e.target.files[0];
+    const base64 = await convertToBase64(imageFile);
+    setPost({
+      type: 'image',
+      userName: userName,
+      date: dt.toLocaleString(DateTime.DATETIME_FULL),
+      post: postText,
+      likes: 0,
+      image: base64
+    }, []);
+    e.target.value = '';
+    postContext.setNewPost([...newPost, post]);
+  });
+
+  const convertToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      if (!file) {
+        alert('Please select an image');
+      } else {
+        fileReader.readAsDataURL(file);
+        fileReader.onload = () => {
+          resolve(fileReader.result);
+        };
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      }
+    });
+  };
 
   return (
     <div className='add-posts'>
@@ -46,7 +78,7 @@ export const CreatePost = () => {
               </div>
               <div className="modal-footer">
                 <button type="button" className={postText.length <= 0 ? "create-post-button-disabled" : "create-post-button btn btn-primary"} disabled={postText.length <= 0 ? true : false}
-                  onClick={handleOnClick}
+                  onClick={handleOnPost}
                 >Publicar</button>
               </div>
             </div>
@@ -72,12 +104,12 @@ export const CreatePost = () => {
                   <div>{userName}</div>
                   <textarea className='media-text-area' placeholder='¿Que estas pensando?' value={postText} onChange={(e) => setPostText(e.currentTarget.value)} />
                   <label className='upload-image-input-label'> <FcMultipleCameras className='media-input-icon'/> <div>Añadir Foto!</div>
-                    <input className='upload-image-input' type='file' />
+                    <input className='upload-image-input' type='file' accept='image/*, png, jpg, jpeg' onChange={(e) =>handleOnFileSelected(e)}/>
                   </label>
                 </div>
                 <div className="modal-footer">
                   <button type="button" className={postText.length <= 0 ? "create-post-button-disabled" : "create-post-button btn btn-primary"} disabled={postText.length <= 0 ? true : false}
-                    onClick={handleOnClick}
+                    onClick={handleOnPost}
                   >Publicar</button>
                 </div>
               </div>

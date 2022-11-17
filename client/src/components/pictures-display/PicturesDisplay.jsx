@@ -5,7 +5,7 @@ import './styles.css';
 export const PicturesDisplay = () => {
   return (
       <div className='pictures'>
-        <h5 className='pictures-title'>Fotos</h5>
+        <h4 className='pictures-title'>Fotos</h4>
         <div className='pictures-display'>
           <p>picture</p>
           <p>picture</p>

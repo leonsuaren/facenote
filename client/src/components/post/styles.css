@@ -77,6 +77,10 @@
 .comments-area-input {
   margin: 10px 0;
 }
+
+.post-image-container {
+  width: 100%;
+}
 /* Responsive Layout */
 /* Small Divises */
 @media only screen and (max-width: 600px) {
