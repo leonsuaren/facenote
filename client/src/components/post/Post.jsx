@@ -6,7 +6,7 @@ import { FcLike } from "react-icons/fc";
 
 export const Post = () => {
   const postContext = useContext(PostContext);
-  const posts = postContext.newPost;
+  const posts = postContext.posts;
 
   return (
     <div>
