@@ -91,6 +91,7 @@ export const CreatePost = () => {
               </div>
               <div className="modal-footer">
                 <button type="button" className={postText.length <= 0 ? "create-post-button-disabled" : "create-post-button btn btn-primary"} disabled={postText.length <= 0 ? true : false}
+                  data-bs-dismiss="modal" aria-label="Close"
                   onClick={handleOnPost}
                 >Publicar</button>
               </div>
@@ -122,6 +123,7 @@ export const CreatePost = () => {
                 </div>
                 <div className="modal-footer">
                   <button type="button" className={postText.length <= 0 ? "create-post-button-disabled" : "create-post-button btn btn-primary"} disabled={postText.length <= 0 ? true : false}
+                    data-bs-dismiss="modal" aria-label="Close"
                     onClick={handleOnPost}
                   >Publicar</button>
                 </div>

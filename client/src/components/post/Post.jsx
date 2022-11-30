@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { PostContext } from '../../context/post-context';
 import './styles.css';
 
-import { FcLike } from "react-icons/fc";
+import { FcLike, FcDeleteRow } from "react-icons/fc";
 
 export const Post = () => {
   const postContext = useContext(PostContext);
@@ -15,8 +15,13 @@ export const Post = () => {
           return (
             <div className='view-posts' key={key}>
               <div className='post-header'>
-                <span className='post-name'>{post.userName} </span>
-                <span className='post-date'> {post.date}</span>
+                <div>
+                  <span className='post-name'>{post.userName} </span>
+                  <span className='post-date'> {post.date}</span>
+                </div>
+                <div className='delete-post-button-wrapper'>
+                  <button className='delete-post-button'><FcDeleteRow className='delete-post-icon'/></button>
+                </div>
               </div>
               <div>
                 {

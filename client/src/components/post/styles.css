@@ -1,5 +1,21 @@
 .post-header {
+  display: grid;
+  grid-template-columns: 80% 20%;
   padding: 10px;
+}
+
+.delete-post-button-wrapper {
+  text-align: center;
+}
+
+.delete-post-button {
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+}
+
+.delete-post-icon {
+  font-size: 2.3rem;
 }
 
 .post-name {
