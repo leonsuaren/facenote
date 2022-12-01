@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { PostContext }  from '../../context/post-context';
 
 import './styles.css';
 
-export const Modal = () => {
+export const Modal = ({ postToDelete }) => {
+  const postContext = useContext(PostContext);
+  const posts = postContext.posts;
+
+  /**
+   * This function deletes a posts using the post's id 
+   */
+  const handleOnConfirmDeletePost = () => {
+    const singlePostToDelete = posts.filter((post) => post._id !== postToDelete);
+    postContext.setPosts(singlePostToDelete);
+  };
+
   return (
     <div className="modal fade" id="deletePostModal" tabIndex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
       <div className="modal-dialog">
@@ -14,6 +27,7 @@ export const Modal = () => {
             <button type="button" className="create-post-button btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
             <button type="button" className="create-post-button btn btn-danger"
               data-bs-dismiss="modal" aria-label="Close"
+              onClick={handleOnConfirmDeletePost}
             >Borrar Publicación</button>
           </div>
         </div>

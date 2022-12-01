@@ -5,9 +5,6 @@ import './styles.css';
 
 export const PicturesDisplay = () => {
   const postContext = useContext(PostContext);
-  const posts = postContext.newPost
-
-  console.log(posts);
 
   return (
     <div className='pictures'>

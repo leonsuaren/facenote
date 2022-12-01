@@ -11,7 +11,6 @@ export const CreatePost = () => {
   const dt = DateTime.now();
 
   const [postText, setPostText] = useState('');
-  const [post, setPost] = useState({});
 
   const userName = postContext.userName;
   const posts = postContext.posts;
@@ -19,8 +18,9 @@ export const CreatePost = () => {
   /**
    * This function creates a new post in variable comming from the context 
    */
-  const handleOnPost = () => {
+  const handleOnCreatePost = () => {
     const currentPost = {
+      _id: Math.floor(Math.random() * 1000),
       type: 'text',
       userName: userName,
       date: dt.toLocaleString(DateTime.DATETIME_FULL),
@@ -92,7 +92,7 @@ export const CreatePost = () => {
               <div className="modal-footer">
                 <button type="button" className={postText.length <= 0 ? "create-post-button-disabled" : "create-post-button btn btn-primary"} disabled={postText.length <= 0 ? true : false}
                   data-bs-dismiss="modal" aria-label="Close"
-                  onClick={handleOnPost}
+                  onClick={handleOnCreatePost}
                 >Publicar</button>
               </div>
             </div>
@@ -124,7 +124,7 @@ export const CreatePost = () => {
                 <div className="modal-footer">
                   <button type="button" className={postText.length <= 0 ? "create-post-button-disabled" : "create-post-button btn btn-primary"} disabled={postText.length <= 0 ? true : false}
                     data-bs-dismiss="modal" aria-label="Close"
-                    onClick={handleOnPost}
+                    onClick={handleOnCreatePost}
                   >Publicar</button>
                 </div>
               </div>

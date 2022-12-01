@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Modal } from '../../components/modal';
 import { PostContext } from '../../context/post-context';
 import './styles.css';
@@ -7,7 +7,16 @@ import { FcLike, FcDeleteRow } from "react-icons/fc";
 
 export const Post = () => {
   const postContext = useContext(PostContext);
+  const [postToDelete, setPostToDelete] = useState('');
   const posts = postContext.posts;
+
+  /**
+   * this function sends the post's Id to the modal in order to delete the post
+   * @param {post} post's Id
+   */
+  const handleOnDeletePost = (post) => {
+    setPostToDelete(post);
+  };
 
   return (
     <div>
@@ -21,7 +30,7 @@ export const Post = () => {
                   <span className='post-date'> {post.date}</span>
                 </div>
                 <div className='delete-post-button-wrapper'>
-                  <button type="button" className='delete-post-button' data-bs-toggle="modal" data-bs-target="#deletePostModal"><FcDeleteRow className='delete-post-icon'/></button>
+                  <button type="button" className='delete-post-button' data-bs-toggle="modal" data-bs-target="#deletePostModal" onClick={() => handleOnDeletePost(post._id)}><FcDeleteRow className='delete-post-icon'/></button>
                 </div>
               </div>
               <div>
@@ -46,7 +55,7 @@ export const Post = () => {
           )
         })
       }
-      <Modal />
+      <Modal postToDelete={postToDelete}/>
     </div>
   )
 }
