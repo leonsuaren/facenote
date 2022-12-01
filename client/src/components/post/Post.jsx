@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Modal } from '../../components/modal';
 import { PostContext } from '../../context/post-context';
 import './styles.css';
 
@@ -20,7 +21,7 @@ export const Post = () => {
                   <span className='post-date'> {post.date}</span>
                 </div>
                 <div className='delete-post-button-wrapper'>
-                  <button className='delete-post-button'><FcDeleteRow className='delete-post-icon'/></button>
+                  <button type="button" className='delete-post-button' data-bs-toggle="modal" data-bs-target="#deletePostModal"><FcDeleteRow className='delete-post-icon'/></button>
                 </div>
               </div>
               <div>
@@ -45,6 +46,7 @@ export const Post = () => {
           )
         })
       }
+      <Modal />
     </div>
   )
 }
