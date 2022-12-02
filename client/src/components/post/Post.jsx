@@ -8,7 +8,7 @@ import { FcLike, FcDeleteRow } from "react-icons/fc";
 export const Post = () => {
   const postContext = useContext(PostContext);
   const [postToDelete, setPostToDelete] = useState('');
-  const posts = postContext.posts;
+  const posts = [].concat(postContext.posts).reverse();
 
   /**
    * this function sends the post's Id to the modal in order to delete the post
@@ -17,7 +17,7 @@ export const Post = () => {
   const handleOnDeletePost = (post) => {
     setPostToDelete(post);
   };
-  console.log(posts);
+
   return (
     <div>
       {

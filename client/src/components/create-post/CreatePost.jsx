@@ -32,6 +32,9 @@ export const CreatePost = () => {
     setPostText('');
   };
 
+  /**
+   * This function creates a new image post and add the post to the current post's array
+   */
   const handleOnCreateImagePost = () => {
     const currentPost = {
       _id: Math.floor(Math.random() * 1000),
@@ -51,16 +54,6 @@ export const CreatePost = () => {
     const imageFile = e.target.files[0];
     const base64 = await convertToBase64(imageFile);
     setBase64(base64);
-    // const currentPost = {
-    //   _id: Math.floor(Math.random() * 1000),
-    //   type: 'image',
-    //   userName: userName,
-    //   date: dt.toLocaleString(DateTime.DATETIME_FULL),
-    //   post: postText,
-    //   likes: 0,
-    //   image: base64
-    // }
-    // postContext.setPosts([...posts, currentPost]);
     e.target.value = '';
   });
 
