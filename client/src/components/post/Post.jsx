@@ -20,7 +20,11 @@ export const Post = () => {
 
   return (
     <div>
-      {
+      { 
+        posts.length <= 0 ? 
+        <div className='view-posts'>
+        <h3>No has poblicado nada aún!</h3> 
+        </div> :
         posts.map((post, key) => {
           return (
             <div className='view-posts' key={key}>

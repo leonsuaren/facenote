@@ -28,6 +28,7 @@ export const CreatePost = () => {
       likes: 0
     };
     postContext.setPosts([...posts, currentPost]);
+    setPostText('');
   };
 
   const handleOnFileSelected = useCallback( async(e) => {
@@ -42,6 +43,7 @@ export const CreatePost = () => {
     //   image: base64
     // }, []);
     const currentPost = {
+      _id: Math.floor(Math.random() * 1000),
       type: 'image',
       userName: userName,
       date: dt.toLocaleString(DateTime.DATETIME_FULL),
