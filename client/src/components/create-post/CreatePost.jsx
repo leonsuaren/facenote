@@ -11,6 +11,7 @@ export const CreatePost = () => {
   const dt = DateTime.now();
 
   const [postText, setPostText] = useState('');
+  const [base64, setBase64] = useState('');
 
   const userName = postContext.userName;
   const posts = postContext.posts;
@@ -31,17 +32,7 @@ export const CreatePost = () => {
     setPostText('');
   };
 
-  const handleOnFileSelected = useCallback( async(e) => {
-    const imageFile = e.target.files[0];
-    const base64 = await convertToBase64(imageFile);
-    // setPost({
-    //   type: 'image',
-    //   userName: userName,
-    //   date: dt.toLocaleString(DateTime.DATETIME_FULL),
-    //   post: postText,
-    //   likes: 0,
-    //   image: base64
-    // }, []);
+  const handleOnCreateImagePost = () => {
     const currentPost = {
       _id: Math.floor(Math.random() * 1000),
       type: 'image',
@@ -51,8 +42,26 @@ export const CreatePost = () => {
       likes: 0,
       image: base64
     }
-    e.target.value = '';
     postContext.setPosts([...posts, currentPost]);
+    setPostText('');
+
+  }
+
+  const handleOnFileSelected = useCallback( async(e) => {
+    const imageFile = e.target.files[0];
+    const base64 = await convertToBase64(imageFile);
+    setBase64(base64);
+    // const currentPost = {
+    //   _id: Math.floor(Math.random() * 1000),
+    //   type: 'image',
+    //   userName: userName,
+    //   date: dt.toLocaleString(DateTime.DATETIME_FULL),
+    //   post: postText,
+    //   likes: 0,
+    //   image: base64
+    // }
+    // postContext.setPosts([...posts, currentPost]);
+    e.target.value = '';
   });
 
   const convertToBase64 = (file) => {
@@ -120,13 +129,13 @@ export const CreatePost = () => {
                   <div>{userName}</div>
                   <textarea className='media-text-area' placeholder='¿Que estas pensando?' value={postText} onChange={(e) => setPostText(e.currentTarget.value)} />
                   <label className='upload-image-input-label'> <FcMultipleCameras className='media-input-icon'/> <div>Añadir Foto!</div>
-                    <input className='upload-image-input' type='file' accept='image/*, png, jpg, jpeg' onChange={(e) =>handleOnFileSelected(e)}/>
+                    <input className='upload-image-input' type='file' accept='image/*, png, jpg, jpeg' onChange={handleOnFileSelected}/>
                   </label>
                 </div>
                 <div className="modal-footer">
                   <button type="button" className={postText.length <= 0 ? "create-post-button-disabled" : "create-post-button btn btn-primary"} disabled={postText.length <= 0 ? true : false}
                     data-bs-dismiss="modal" aria-label="Close"
-                    onClick={handleOnCreatePost}
+                    onClick={handleOnCreateImagePost}
                   >Publicar</button>
                 </div>
               </div>
