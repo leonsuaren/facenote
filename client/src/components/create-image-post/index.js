@@ -1,0 +1,1 @@
+export { CreateImagePost } from './CreateImagePost';

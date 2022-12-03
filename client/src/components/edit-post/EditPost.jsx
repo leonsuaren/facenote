@@ -8,7 +8,7 @@ export const EditPost = ({ header, callToAction, userName, postId }) => {
   const postContext = useContext(PostContext);
   const posts = postContext.posts;
   const post = posts.filter((post) => post._id === postId);
-
+  console.log(post)
   const handleOnConfirmEditPost = () => {
   }
 
@@ -21,7 +21,7 @@ export const EditPost = ({ header, callToAction, userName, postId }) => {
       <div className="modal-body">
         <div className="modal-body modal-posting-area">
           <div>{ userName }</div>
-          <textarea className='post-text-area' placeholder={post[0].post} />
+          <textarea className='post-text-area'  placeholder={post.length <= 0 ? '' : post[0].post}/>
         </div>
       </div>
       <div className="modal-footer">

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Modal } from '../../components/modal';
+import { Modal, DeleteModal } from '../../components/modal';
 import { EditPost } from '../../components/edit-post';
 import { PostContext } from '../../context/post-context';
 import './styles.css';
@@ -73,12 +73,13 @@ export const Post = () => {
       }
       <Modal>
         <EditPost 
-          header='Seguro que desea borrar esta publicación?'
-          callToAction='Editar Publicación'
+          header='Editar Publicación'
+          callToAction='Editar'
           userName={userName}
           postId={postId}
         />
       </Modal>
+      <DeleteModal />
     </div>
   )
 }
