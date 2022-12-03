@@ -18,6 +18,11 @@
   font-size: 2.3rem;
 }
 
+.edit-post-wrapper {
+  width: 100%;
+  text-align: end;
+}
+
 .post-name {
   font-weight: bold;
   font-size: 1.2rem;

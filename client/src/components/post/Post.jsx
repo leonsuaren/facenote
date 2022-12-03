@@ -1,21 +1,23 @@
 import React, { useContext, useState } from 'react';
 import { Modal } from '../../components/modal';
+import { EditPost } from '../../components/edit-post';
 import { PostContext } from '../../context/post-context';
 import './styles.css';
 
-import { FcLike, FcDeleteRow } from "react-icons/fc";
+import { FcLike, FcDeleteRow, FcEditImage } from "react-icons/fc";
 
 export const Post = () => {
   const postContext = useContext(PostContext);
-  const [postToDelete, setPostToDelete] = useState('');
+  const userName = postContext.userName;
+  const [postId, setPostId] = useState('');
   const posts = [].concat(postContext.posts).reverse();
 
   /**
    * this function sends the post's Id to the modal in order to delete the post
    * @param {post} post's Id
    */
-  const handleOnDeletePost = (post) => {
-    setPostToDelete(post);
+  const handleOnGetPostId = (post) => {
+    setPostId(post);
   };
 
   return (
@@ -34,10 +36,15 @@ export const Post = () => {
                     <span className='post-date'> {post.date}</span>
                   </div>
                   <div className='delete-post-button-wrapper'>
-                    <button type="button" className='delete-post-button' data-bs-toggle="modal" data-bs-target="#deletePostModal" onClick={() => handleOnDeletePost(post._id)}><FcDeleteRow className='delete-post-icon' /></button>
+                    <button type="button" className='delete-post-button' data-bs-toggle="modal" data-bs-target="#deletePostModal" onClick={() => handleOnGetPostId(post._id)}><FcDeleteRow className='delete-post-icon' /></button>
                   </div>
                 </div>
                 <div>
+                  <div className='edit-post-wrapper'>
+                    <button type="button" className='delete-post-button' data-bs-toggle="modal" data-bs-target="#deletePostModal" >
+                      <FcEditImage className='delete-post-icon' onClick={() => handleOnGetPostId(post._id)}/>
+                    </button>
+                  </div>
                   {
                     post.type === 'text' ?
                       <div className='post-text-area'>{post.post}</div> :
@@ -64,7 +71,15 @@ export const Post = () => {
             )
           })
       }
-      <Modal postToDelete={postToDelete} />
+      <Modal>
+        <EditPost 
+          header='Seguro que desea borrar esta publicación?'
+          callToAction='Editar Publicación'
+          userName={userName}
+          postId={postId}
+        />
+      </Modal>
     </div>
   )
 }
+    // <Modal postToDelete={postToDelete} />
