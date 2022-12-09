@@ -3,8 +3,7 @@ import { PostContext } from '../../context/post-context';
 
 import './styles.css';
 
-export const Modal = ({ children }) => {
-
+export const Modal = ({ children, postId }) => {
   return (
     <div className="modal fade" id="postModal" tabIndex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
       <div className="modal-dialog">
@@ -16,7 +15,7 @@ export const Modal = ({ children }) => {
   )
 }
 
-export const DeleteModal = ({ postToDelete }) => {
+export const DeleteModal = ({ postId }) => {
   const postContext = useContext(PostContext);
   const posts = postContext.posts;
 
@@ -24,7 +23,8 @@ export const DeleteModal = ({ postToDelete }) => {
    * This function deletes a posts using the post's id 
    */
   const handleOnConfirmDeletePost = () => {
-    const singlePostToDelete = posts.filter((post) => post._id !== postToDelete);
+    const singlePostToDelete = posts.filter((post) => post._id !== postId);
+    console.log(postId);
     postContext.setPosts(singlePostToDelete);
   };
 

@@ -8,7 +8,6 @@ export const EditPost = ({ header, callToAction, userName, postId }) => {
   const postContext = useContext(PostContext);
   const posts = postContext.posts;
   const post = posts.filter((post) => post._id === postId);
-  console.log(post)
   const handleOnConfirmEditPost = () => {
   }
 

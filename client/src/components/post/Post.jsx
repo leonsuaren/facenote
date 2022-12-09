@@ -25,7 +25,7 @@ export const Post = () => {
       {
         posts.length <= 0 ?
           <div className='view-posts'>
-            <h3>No has poblicado nada aún!</h3>
+            <h3>No has públicado nada aún!</h3>
           </div> :
           posts.map((post, key) => {
             return (
@@ -79,7 +79,7 @@ export const Post = () => {
           postId={postId}
         />
       </Modal>
-      <DeleteModal />
+      <DeleteModal postId={postId}/>
     </div>
   )
 }
